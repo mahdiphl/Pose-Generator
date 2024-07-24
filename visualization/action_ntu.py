@@ -4,7 +4,7 @@ from matplotlib import pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from scipy.ndimage import gaussian_filter1d
 
-sys.path.append(".")
+sys.path.append("/content/Pose-Generator")
 
 from utils.general import check_runs
 
@@ -161,5 +161,5 @@ for frame_idx in range(data_numpy.shape[1]):
     plt.savefig(os.path.join(out,"frame_"+str(frame_idx)+".png"))
     #plt.show()
     print("The {} frame 3d skeleton......".format(frame_idx))
-
+    print("The frame Saved in : ", os.path.join(out,"frame_"+str(frame_idx)+".png"))
     ax.set_facecolor('none')
