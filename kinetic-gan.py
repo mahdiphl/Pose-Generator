@@ -29,7 +29,7 @@ parser.add_argument("--b2", type=float, default=0.999, help="adam: decay of firs
 parser.add_argument("--n_cpu", type=int, default=8, help="number of cpu threads to use during batch generation")
 parser.add_argument("--latent_dim", type=int, default=512, help="dimensionality of the latent space")
 parser.add_argument("--mlp_dim", type=int, default=4, help="mapping network depth")
-parser.add_argument("--n_classes", type=int, default=60, help="number of classes for dataset")
+parser.add_argument("--n_classes", type=int, default=120, help="number of classes for dataset")
 parser.add_argument("--t_size", type=int, default=64, help="size of each temporal dimension")
 parser.add_argument("--v_size", type=int, default=25, help="size of each spatial dimension (vertices)")
 parser.add_argument("--channels", type=int, default=3, help="number of channels (coordinates)")
@@ -53,6 +53,7 @@ copyfile('models/generator.py', os.path.join(out, 'generator.py'))
 copyfile('models/discriminator.py', os.path.join(out, 'discriminator.py'))
 
 cuda = True if torch.cuda.is_available() else False
+#cuda = False
 print('CUDA',cuda)
 
 # Models initialization
